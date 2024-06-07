@@ -81,7 +81,9 @@ app.frame("/", neynarMiddleware, async (c) => {
         </HStack>
       </Box>
     ),
-    intents: [<Button value="checkScore">Check your Power Score</Button>],
+    intents: [<Button value="checkScore">Check your Power Score</Button>,
+      <Button value="imageHandlerError" action="/imageHandler">ImageHandler</Button>
+    ],
   });
 });
 
@@ -194,12 +196,63 @@ app.frame("/score/7LeyTWyhTP9wZeGgcn2bqA", neynarMiddleware, async (c) => {
     intents: [
       <Button.Link href="https://google.com">Share</Button.Link>,
       <Button value="checkScore">Refresh</Button>,
-      <Button value="joinGame">
-        Play
+      <Button value="joinGame" action="/">
+        Back
       </Button>,
     ],
   });
 });
+
+app.frame("/imageHandler", neynarMiddleware, async (c) => {
+  return c.res({
+    image: '/img',
+    intents: [
+      <Button.Link href="https://google.com">Share</Button.Link>,
+      <Button value="checkScore">Refresh</Button>,
+      <Button value="joinGame" action="/">
+        Back
+      </Button>,
+    ],
+  })
+
+});
+
+app.image('/img', (c) => {
+  return c.res({
+    image: (
+      <Box
+        grow
+        alignHorizontal="left"
+        backgroundColor="background"
+        padding="34"
+      >
+        <HStack gap="22">
+          <VStack gap="4">
+            <Text color="white" size="24" decoration="solid" weight="800">
+              Engagement is nice, but
+            </Text>
+            <Text color="white" size="24" decoration="solid" weight="900">
+              what's your real
+            </Text>
+            <Text color="green" size="24" decoration="solid" weight="900">
+              Farcaster Power?
+            </Text>
+          </VStack>
+          <Box
+            backgroundColor="background"
+            alignHorizontal="right"
+            alignVertical="bottom"
+            height="256"
+            width="192"
+            overflow="hidden"
+          >
+            <Image width="192" height="160" src="/img1.png" />
+          </Box>
+        </HStack>
+      </Box>
+    )
+  })
+})
 
 
 // @ts-ignore
