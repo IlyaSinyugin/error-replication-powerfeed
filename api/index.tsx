@@ -99,6 +99,9 @@ app.frame("/score/7LeyTWyhTP9wZeGgcn2bqA", neynarMiddleware, async (c) => {
           alignItems="center"
           paddingTop="32"
         >
+          <Text color="green" size="24" decoration="solid" weight="800">
+            Powergame Stats
+          </Text>
         </Row>
         <Divider color="green" />
         <Row
