@@ -99,9 +99,6 @@ app.frame("/score/7LeyTWyhTP9wZeGgcn2bqA", neynarMiddleware, async (c) => {
           alignItems="center"
           paddingTop="32"
         >
-          <Text color="green" size="24" decoration="solid" weight="800">
-            Powergame Stats
-          </Text>
         </Row>
         <Divider color="green" />
         <Row
@@ -129,7 +126,6 @@ app.frame("/score/7LeyTWyhTP9wZeGgcn2bqA", neynarMiddleware, async (c) => {
               <Text
                 color="white"
                 size="18"
-                decoration="solid"
                 weight="800"
                 wrap="balance"
               >
@@ -138,7 +134,6 @@ app.frame("/score/7LeyTWyhTP9wZeGgcn2bqA", neynarMiddleware, async (c) => {
               <Text
                 color="green"
                 size="18"
-                decoration="solid"
                 weight="800"
               >
                 got the power!
@@ -147,7 +142,6 @@ app.frame("/score/7LeyTWyhTP9wZeGgcn2bqA", neynarMiddleware, async (c) => {
             <Spacer size="72" />
             <Box
               fontSize="18"
-              fontFamily="default"
               alignContent="center"
               alignVertical="center"
               paddingBottom="14"
@@ -157,8 +151,6 @@ app.frame("/score/7LeyTWyhTP9wZeGgcn2bqA", neynarMiddleware, async (c) => {
               <Text
                 color="white"
                 size="18"
-                decoration="solid"
-                weight="800"
                 wrap="balance"
               >
                 ⚡️sent/received: 12/24
@@ -166,16 +158,12 @@ app.frame("/score/7LeyTWyhTP9wZeGgcn2bqA", neynarMiddleware, async (c) => {
               <Text
                 color="white"
                 size="18"
-                decoration="solid"
-                weight="800"
               >
                 💰points earned: 1337
               </Text>
               <Text
                 color="white"
                 size="18"
-                decoration="solid"
-                weight="800"
               >
                 🏆power rank: 1
               </Text>
@@ -183,10 +171,6 @@ app.frame("/score/7LeyTWyhTP9wZeGgcn2bqA", neynarMiddleware, async (c) => {
           </HStack>
         </Row>
         <Divider color="green" />
-          {/* <Text color="white" size="20" decoration="solid" weight="800">
-            Each ⚡️ sent has points = (sender's Power Score)*10 splitting
-            50/50 between sender and receiver
-          </Text> */}
           <Box fontSize="20" textAlign="center" fontWeight="800" color="white" backgroundColor="background" paddingTop="36" paddingBottom="30">
             Each ⚡️ sent has points = (sender's Power Score)*10 splitting
             50/50 between sender and receiver
@@ -200,6 +184,9 @@ app.frame("/score/7LeyTWyhTP9wZeGgcn2bqA", neynarMiddleware, async (c) => {
         Back
       </Button>,
     ],
+    headers: {
+      "Cache-Control": "max-age=0",
+     }
   });
 });
 
